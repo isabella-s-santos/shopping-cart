@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="users-body">
+    <input type="search" 
+        placeholder="Search user by name"
+        [formControl]="searchField"
+        class="input-container"
+    />
+
+    <div class="users-table-container">
+        <table mat-table [dataSource]="users" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let user"> {{ user.name }} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef> E-mail </th>
+              <td mat-cell *matCellDef="let user"> {{ user.email }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icons">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let user" class="justify-icons"> 
+                    <div 
+                        class="icon-container"
+                        [routerLink]="[user._id]"
+                        (click)="openDialog()">
+                        <mat-icon aria-hidden="false" class="icon-size">edit</mat-icon>
+                    </div>
+                    <div
+                        class="icon-container"
+                        [routerLink]="[user._id]"
+                        (click)="deleteUser(user._id)">
+                        <mat-icon aria-hidden="false" class="icon-size">delete</mat-icon>
+                    </div>
+                </td>
+            </ng-container>            
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <ng-template #dialogTemplate>
+                <app-dialog>
+                    <app-user-form></app-user-form>
+                </app-dialog>
+            </ng-template>
+        </table>
+    </div>
+</div>
+
+<app-footer></app-footer>

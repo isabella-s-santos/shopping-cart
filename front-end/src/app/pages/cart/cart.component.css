@@ -1,0 +1,30 @@
+.mat-elevation-z8, .mat-mdc-elevation-specific.mat-elevation-z8 {
+    box-shadow: none;
+}
+
+.cart-table-container {
+    width: 500px;
+    padding-top: 30px;
+}
+
+.cart-body {
+    height: calc(100% - 48px - 29px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+.justify-icon {
+    display: flex;
+    justify-content: flex-end;
+    height: 52px;
+    align-items: center;
+}
+
+.icon-container {
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+<div class="product-form-container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-form-field *ngIf="!isHidden"
+            appearance="fill">
+            <mat-label></mat-label>
+            <input matInput formControlName="userId">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price">
+        </mat-form-field>
+    
+        <button mat-stroked-button type="submit">Sell!</button>
+    </form>
+</div>

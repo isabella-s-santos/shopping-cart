@@ -1,0 +1,40 @@
+.mat-elevation-z8, .mat-mdc-elevation-specific.mat-elevation-z8 {
+    box-shadow: none;
+}
+
+.users-table-container {
+    width: 500px;
+    padding-top: 30px;
+}
+
+.users-body {
+    height: calc(100% - 48px - 29px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+.justify-icons {
+    display: flex;
+    justify-content: flex-end;
+    height: 52px;
+    align-items: center;
+}
+
+.icon-container {
+    cursor: pointer;
+}
+
+.input-container {
+    height: 36px;
+    width: 500px;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+
+    padding-left: 10px;  
+}

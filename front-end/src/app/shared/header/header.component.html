@@ -1,0 +1,59 @@
+<div class="header-container">
+    <nav 
+        mat-tab-nav-bar [tabPanel]="tabPanel" 
+        mat-stretch-tabs="false" 
+        mat-align-tabs="center">
+    
+        <a mat-tab-link
+            [routerLink]="['/home']"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            Home
+        </a>
+
+        <a mat-tab-link
+            *ngIf="!isAuthenticated"
+            [routerLink]="['/login']"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            Login
+        </a>
+
+        <a mat-tab-link
+            *ngIf="!isAuthenticated"
+            [routerLink]="['/signup']"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            Sign up
+        </a>
+
+        <a mat-tab-link
+            *ngIf="isAuthenticated"
+            [routerLink]="['/users']"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            Users
+        </a>    
+        
+        <a mat-tab-link
+            *ngIf="isAuthenticated"
+            [routerLink]="['/sell']"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            Sell
+        </a>  
+    </nav>
+    <div class="icons-container">
+        <div [routerLink]="['/cart']">
+            <mat-icon aria-hidden="false">shopping_cart</mat-icon>
+        </div>
+        <div [routerLink]="['/logout']">
+            <mat-icon 
+                *ngIf="isAuthenticated"
+                aria-hidden="false">
+                logout
+            </mat-icon>
+        </div>
+    </div>
+</div>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
